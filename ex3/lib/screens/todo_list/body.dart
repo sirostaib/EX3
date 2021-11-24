@@ -32,7 +32,9 @@ class _TBodyState extends State<TBody> {
                             TaskListScreen(Todo.copy(td[index]))));
                 if (result != null) {
                   td[index].update(result);
-                  setState(() {});
+                  setState(() {
+                    td[index].update(result);
+                  });
                 }
                 if (result == null) {
                   setState(() {});

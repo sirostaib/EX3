@@ -7,7 +7,7 @@ class Todo {
   int get percentage {
     int count = 0;
     for (int i = 0; i < myTask.length; i++) {
-      if (myTask[i].status == true) {
+      if (myTask[i].status == false) {
         count++;
       }
     }

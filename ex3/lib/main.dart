@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ex3/screens/todo_list/todo_list_screen.dart';
+import 'package:ex3/models/mock_todos.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: ,
+      home: TScreen(myToDo),
       debugShowCheckedModeBanner: false,
     );
   }
