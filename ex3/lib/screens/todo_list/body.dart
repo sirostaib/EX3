@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ex3/models/mock_todos.dart';
 import 'package:ex3/models/todo.dart';
 
+import 'package:ex3/screens/tosk_list/task_list_screen.dart';
+
 class TBody extends StatefulWidget {
   const TBody({Key? key}) : super(key: key);
   @override
@@ -18,7 +20,7 @@ class _TBodyState extends State<TBody> {
               title: Text(td[index].title),
               subtitle: Text("This list has " +
                   td[index].myTask.length.toString() +
-                  " task(S)"),
+                  " task(s)"),
               trailing: CircleAvatar(
                 child: Text(td[index].percentage.toString()),
               ),
@@ -27,7 +29,7 @@ class _TBodyState extends State<TBody> {
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                           // taskListscreen(Todo.copy(td[index]))));
+                            TaskListScreen(Todo.copy(td[index]))));
                 if (result != null) {
                   td[index].update(result);
                   setState(() {});
@@ -37,7 +39,8 @@ class _TBodyState extends State<TBody> {
                 }
               },
             ),
-        separatorBuilder: (context, index) => Divider(color: Colors.blueGrey),
+        separatorBuilder: (context, index) =>
+            const Divider(color: Colors.black),
         itemCount: td.length);
   }
 }
